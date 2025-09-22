@@ -3,10 +3,10 @@ import { Facebook, Instagram } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-72 bg-[#1C1C1C] text-white py-4">
+    <footer className="mt-52 bg-[#1C1C1C] text-white py-4">
       <div className="container mx-auto text-center">
         <nav className="mb-2">
-          <Link href="/Home" className="mx-2 hover:underline">
+          <Link href="/home" className="mx-2 hover:underline">
             Home
           </Link>
           <Link href="/services" className="mx-2 hover:underline">
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <Link href="/allTestimonials" className="mx-2 hover:underline">
             About Us
           </Link>
-          <Link href="/Contact" className="mx-2 hover:underline">
+          <Link href="/contact" className="mx-2 hover:underline">
             Contact
           </Link>
           <Link href="/allBlogs" className="mx-2 hover:underline">

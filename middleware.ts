@@ -1,12 +1,12 @@
-// middleware.ts (v4)
+// middleware.ts 
 import { withAuth } from "next-auth/middleware";
 
 export default withAuth({
   pages: {
-    signIn: "/sign-in", // ✅ এখানে-ও একই
+    signIn: "/sign-in"
   },
 });
 
 export const config = {
-  matcher: ["/Dashboard/:path*"], // ✅ শুধু প্রোটেক্টেড রুট
+  matcher: ["/admin/dashboard/:path*"]
 };

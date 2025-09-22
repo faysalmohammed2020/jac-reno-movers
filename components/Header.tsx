@@ -64,7 +64,7 @@ const HeaderMenu: React.FC = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
              <Image
-              src="/image/smlogo.png"
+              src="/image/Jacrenologo.png"
               alt="Company Logo"
               width={100}
               height={59}
@@ -183,7 +183,7 @@ const HeaderMenu: React.FC = () => {
           {/* Contact */}
           <li className="relative group">
             <Link 
-              href="/Contact" 
+              href="/contact" 
               className="font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300 py-2 flex items-center after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 group-hover:after:w-full"
             >
               Contact

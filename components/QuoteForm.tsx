@@ -32,9 +32,9 @@ const MovingCalculator: React.FC = () => {
     "Office move",
   ];
 
-  const usStates = ["Alaska"];
+  const usStates = ["Canada"];
   const zipCodes = ["99501", "99502", "99503", "99504", "99505", "99506"];
-  const cities = ["Anchorage", "Fairbanks", "Juneau", "Sitka", "Ketchikan", "Wasilla"];
+  const cities = ["Alberta", "Fairbanks", "Juneau", "Sitka", "Ketchikan", "Wasilla"];
 
   useEffect(() => {
     fetch("https://api.ipify.org?format=json")

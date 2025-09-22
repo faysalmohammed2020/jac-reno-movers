@@ -15,7 +15,6 @@ const Homepage = () => {
     
     <HeroSection/>
     <ServiceSection/>
-
      <BlogSection/>
      <TestimonialsSection/>
      <VideoSection/>
