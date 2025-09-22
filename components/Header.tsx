@@ -62,15 +62,18 @@ const HeaderMenu: React.FC = () => {
       <nav className="container flex items-center justify-between py-3 px-6">
         {/* Logo Section */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-             <Image
-              src="/image/l7.jpeg"
-              alt="Company Logo"
-              width={100}
-              height={50}
-            />
-          </Link>
-        </div>
+  <Link href="/" className="flex items-center">
+    <Image
+      src="/image/l7.jpeg"
+      alt="Company Logo"
+      width={100}
+      height={50}
+      className="spin-clockwise"
+    />
+  </Link>
+</div>
+
+
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center space-x-8">

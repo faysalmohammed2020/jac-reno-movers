@@ -22,3 +22,16 @@
   .scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-yellow-400; /* Thumb color on hover for both scrollbars */
   }
+ @keyframes spin-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-clockwise {
+  animation: spin-clockwise 5s linear infinite;
+}
+

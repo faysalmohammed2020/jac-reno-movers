@@ -45,11 +45,16 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center h-full px-4 md:px-8 lg:px-16">
         {/* Text Content */}
         <div className="text-white text-center lg:text-left max-w-2xl lg:mt-40">
-  <div className="mb-6">
+          <div className="mt-4">
+    <p className="text-blue-200 font-medium text-2xl">
+      Jack Reno Ltd • Interstate Moving • Long Distance Moving • Canada • Saskatchewan
+    </p>
+  </div>
+  {/* <div className="mb-6">
     <div className="inline-block bg-blue-700 bg-opacity-60 px-4 py-2 rounded-lg mb-6">
       <span className="text-blue-200 text-sm font-semibold tracking-wide">LOGISTICS EXCELLENCE</span>
     </div>
-  </div>
+  </div> */}
   
   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
     Where <span className="text-blue-300">Efficiency</span> Meets <span className="text-white">Excellence</span>
@@ -60,11 +65,7 @@ const HeroSection = () => {
   </p>
   
   {/* Added company text */}
-  <div className="mt-4">
-    <p className="text-blue-200 font-medium text-md">
-      Jack Reno Ltd • Interstate Moving • Long Distance Moving • Canada • Saskatchewan
-    </p>
-  </div>
+  
   
   <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
