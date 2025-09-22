@@ -118,31 +118,6 @@ const BlogAll = () => {
             </div>
           ))}
         </div>
-
-        {/* Load More Button (optional) */}
-        <div className="text-center mt-12">
-          <button className="bg-white text-slate-700 border border-slate-200 rounded-full px-8 py-3 font-medium hover:bg-slate-50 hover:shadow-md transition-all duration-300">
-            Load More Articles
-          </button>
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated with Our Insights</h2>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter and never miss our latest articles, industry insights, and expert tips.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Your email address"
-              className="flex-grow px-4 py-3 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-            <button className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors duration-300 whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

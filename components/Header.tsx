@@ -64,10 +64,10 @@ const HeaderMenu: React.FC = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
              <Image
-              src="/image/Jacrenologo.png"
+              src="/image/l7.jpeg"
               alt="Company Logo"
               width={100}
-              height={59}
+              height={50}
             />
           </Link>
         </div>
