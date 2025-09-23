@@ -33,9 +33,24 @@ const MovingCalculator: React.FC = () => {
     "Office move",
   ];
 
-  const usStates = ["Alaska"];
-  const zipCodes = ["99501", "99502", "99503", "99504", "99505", "99506"];
-  const cities = ["Anchorage", "Fairbanks", "Juneau", "Sitka", "Ketchikan", "Wasilla"];
+  const caProvinces  =  ["Ontario", "British Columbia", "Quebec"];
+  const postalCodes  = [
+  "M5A", "M5B", "M5C", "M5E", "M5G", "M5H", 
+  "V5K", "V5L", "V5M", "V5N", "V5P", "V5R", 
+  "H1A", "H1B", "H1C", "H1E", "H1G", "H1H"  
+];
+  const cities = [
+  "Toronto",
+  "Ottawa",
+  "Vancouver",
+  "Victoria",
+  "Montreal",
+  "Quebec City",
+  "Calgary",
+  "Edmonton",
+  "Winnipeg",
+  "Halifax"
+];
 
   useEffect(() => {
     fetch("https://api.ipify.org?format=json")
@@ -210,7 +225,7 @@ const MovingCalculator: React.FC = () => {
 
         <select className="p-2 border rounded" value={fromZip} onChange={(e) => setFromZip(e.target.value)}>
           <option value="">From Zip</option>
-          {zipCodes.map((zip) => (
+          {postalCodes.map((zip) => (
             <option key={zip} value={zip}>
               {zip}
             </option>
@@ -228,7 +243,7 @@ const MovingCalculator: React.FC = () => {
 
         <select className="p-2 border rounded" value={fromState} onChange={(e) => setFromState(e.target.value)}>
           <option value="">From State</option>
-          {usStates.map((state, i) => (
+          {caProvinces .map((state, i) => (
             <option key={i} value={state}>
               {state}
             </option>
@@ -237,7 +252,7 @@ const MovingCalculator: React.FC = () => {
 
         <select className="p-2 border rounded" value={toZip} onChange={(e) => setToZip(e.target.value)}>
           <option value="">To Zip</option>
-          {zipCodes.map((zip) => (
+          {postalCodes.map((zip) => (
             <option key={zip} value={zip}>
               {zip}
             </option>
@@ -255,7 +270,7 @@ const MovingCalculator: React.FC = () => {
 
         <select className="p-2 border rounded" value={toState} onChange={(e) => setToState(e.target.value)}>
           <option value="">To State</option>
-          {usStates.map((state, i) => (
+          {caProvinces .map((state, i) => (
             <option key={i} value={state}>
               {state}
             </option>
