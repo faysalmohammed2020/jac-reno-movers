@@ -2,7 +2,7 @@
 //seed updated
 import { PrismaClient, Prisma } from '@prisma/client'
 import bcrypt from 'bcryptjs'
-import { postdata } from '../app/data/postdata'
+import { postdata } from '../app/(main)/data/postdata'
 
 const prisma = new PrismaClient()
 
