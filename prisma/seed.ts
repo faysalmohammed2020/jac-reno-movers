@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+//seed updated
 import { PrismaClient, Prisma } from '@prisma/client'
 import bcrypt from 'bcryptjs'
 import { postdata } from '../app/data/postdata'
