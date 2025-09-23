@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import MovingCalculator from "./QuoteForm";
 
+
 const HeroSection = () => {
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -45,7 +46,7 @@ const HeroSection = () => {
       <div className="relative z-10 w-full flex justify-center pt-8 sm:pt-10 lg:pt-12 px-3 sm:px-4">
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 bg-opacity-90 px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-lg sm:rounded-xl shadow-2xl border border-blue-400 border-opacity-30 backdrop-blur-sm max-w-[95%] sm:max-w-[90%] md:max-w-max">
           <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold text-white tracking-wide text-center leading-tight sm:leading-normal">
-            JAC RENO LTD • Interstate Moving • Long Distance Moving • Canada • Saskatchewan
+            JAC RENO LTD • Provential Moving • Long Distance Moving • Canada • Saskatchewan
           </h2>
         </div>
       </div>
@@ -99,7 +100,7 @@ const HeroSection = () => {
         </div>
         
         {/* Calculator */}
-        <div className={`mt-8 sm:mt-10 md:mt-12 lg:mt-0 transform transition-all duration-500 w-full max-w-md mx-auto lg:mx-0 lg:w-auto ${
+       <div className={`mt-8 sm:mt-10 md:mt-12 lg:mt-0 transform transition-all duration-500 w-full max-w-md mx-auto lg:mx-0 lg:w-auto ${
           isScrolling ? "scale-90 lg:scale-75 opacity-90" : "scale-100 opacity-100"
         } lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-4 xl:right-8 2xl:right-16`}>
           <div className="scale-90 sm:scale-95 md:scale-100 lg:scale-100">

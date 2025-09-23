@@ -119,12 +119,78 @@ export async function DELETE(req: Request) {
 }
 
 // ✅ Fetch All Blog Posts OR a Single Post by ?id=
+// export async function GET(req: Request) {
+//   try {
+//     const { searchParams } = new URL(req.url);
+//     const idParam = searchParams.get("id");
+
+//     // Single post by id: /api/blogs?id=123
+//     if (idParam) {
+//       const id = Number(idParam);
+//       if (Number.isNaN(id)) {
+//         return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+//       }
+//       const post = await prisma.blogPost.findUnique({
+//         where: { id },
+//         select: {
+//           id: true,
+//           post_title: true,
+//           post_content: true,
+//           category: true,
+//           tags: true,
+//           post_status: true,
+//           createdAt: true,
+//           post_date: true,
+//         },
+//       });
+//       if (!post) {
+//         return NextResponse.json({ error: "Not found" }, { status: 404 });
+//       }
+//       return NextResponse.json(post, { status: 200 });
+//     }
+
+//     // List with optional filters
+//     const category = searchParams.get("category");
+//     const authorId = searchParams.get("authorId");
+//     const filters: any = {};
+//     if (category) filters.category = category;
+//     if (authorId) filters.post_author = parseInt(authorId);
+
+//     const blogPosts = await prisma.blogPost.findMany({
+//       where: filters,
+//       orderBy: { createdAt: "desc" },
+//       select: {
+//         id: true,
+//         post_title: true,
+//         post_content: true,
+//         category: true,
+//         tags: true,
+//         post_status: true,
+//         createdAt: true,
+//       },
+//     });
+
+//     return NextResponse.json(blogPosts, { status: 200 });
+//   } catch (error) {
+//     console.error("Error fetching blog posts:", error);
+//     return NextResponse.json(
+//       { error: "Failed to fetch blog posts." },
+//       { status: 500 }
+//     );
+//   }
+// }
+
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const idParam = searchParams.get("id");
+    const category = searchParams.get("category");
+    const authorId = searchParams.get("authorId");
+    const status = searchParams.get("status"); // e.g. "publish"
+    const limitParam = searchParams.get("limit");
+    const take = Math.max(0, Math.min(Number(limitParam ?? "0") || 0, 50)); // cap at 50
 
-    // Single post by id: /api/blogs?id=123
+    // Single post
     if (idParam) {
       const id = Number(idParam);
       if (Number.isNaN(id)) {
@@ -143,22 +209,20 @@ export async function GET(req: Request) {
           post_date: true,
         },
       });
-      if (!post) {
-        return NextResponse.json({ error: "Not found" }, { status: 404 });
-      }
+      if (!post) return NextResponse.json({ error: "Not found" }, { status: 404 });
       return NextResponse.json(post, { status: 200 });
     }
 
-    // List with optional filters
-    const category = searchParams.get("category");
-    const authorId = searchParams.get("authorId");
-    const filters: any = {};
-    if (category) filters.category = category;
-    if (authorId) filters.post_author = parseInt(authorId);
+    // List
+    const where: any = {};
+    if (category) where.category = category;
+    if (authorId) where.post_author = parseInt(authorId);
+    if (status) where.post_status = status; // filter by post_status if sent
 
     const blogPosts = await prisma.blogPost.findMany({
-      where: filters,
+      where,
       orderBy: { createdAt: "desc" },
+      ...(take ? { take } : {}), // apply limit if provided
       select: {
         id: true,
         post_title: true,
@@ -167,15 +231,13 @@ export async function GET(req: Request) {
         tags: true,
         post_status: true,
         createdAt: true,
+        post_date: true,
       },
     });
 
     return NextResponse.json(blogPosts, { status: 200 });
   } catch (error) {
     console.error("Error fetching blog posts:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch blog posts." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch blog posts." }, { status: 500 });
   }
 }
