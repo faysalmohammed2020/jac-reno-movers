@@ -23,15 +23,17 @@
     @apply bg-yellow-400; /* Thumb color on hover for both scrollbars */
   }
  @keyframes spin-clockwise {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: perspective(1000px) rotateY(360deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
   }
+
 }
 
 .spin-clockwise {
   animation: spin-clockwise 5s linear infinite;
+  transform-style: preserve-3d;
 }
 
