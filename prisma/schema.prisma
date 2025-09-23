@@ -25,28 +25,11 @@ model User {
   emailVerified DateTime?                       // MUST change type in DB from Boolean? -> DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-
-  sessions      Session[]
   accounts      Account[]
 
   @@map("users") // existing table name
 }
 
-model Session {
-  id           String   @id @default(cuid())
-  expires      DateTime @map("expiresAt")
-  sessionToken String   @unique @map("token")
-  role         String?
-  createdAt    DateTime
-  updatedAt    DateTime
-  ipAddress    String?
-  userAgent    String?
-
-  userId String
-  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("sessions")
-}
 
 model Account {
   id                    String   @id @default(cuid())
