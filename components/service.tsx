@@ -3,9 +3,9 @@ import { Truck, Warehouse, Link as LinkIcon, ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    title: 'Freight Transport',
+    title: 'House Hold Moving',
     description:
-      'Our Freight Transport services provide reliable and efficient solutions for moving goods across regions. With a fleet of modern vehicles and experienced drivers, we ensure timely deliveries and secure handling of your cargo. Whether it’s small parcels or large shipments, our team is equipped to manage diverse logistics requirements with precision and care.',
+    'Our Household Moving services provide safe, reliable, and stress-free solutions for relocating your home across regions. With a fleet of modern vehicles and experienced movers, we ensure careful handling of your belongings and on-time delivery. Whether it’s a single apartment or a full house, our team is equipped to manage moves of any size with precision, care, and personalized support.',
     image: '/image/img1.jpg',
     icon: <Truck className="w-8 h-8" />,
     features: ['24/7 Tracking', 'Temperature Control', 'Express Delivery']
@@ -94,10 +94,10 @@ const ServiceSection = () => {
                 </ul>
                 
                 {/* Read More Button */}
-                <button className="w-full flex items-center justify-between bg-blue-50 text-blue-700 px-4 py-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                {/* <button className="w-full flex items-center justify-between bg-blue-50 text-blue-700 px-4 py-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <span className="font-medium">Read More</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
